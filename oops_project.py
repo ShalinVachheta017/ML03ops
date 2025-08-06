@@ -26,9 +26,9 @@ class chatbook:
         elif user_input == "2":
             self.signin()  # Call signin method (fixed: was 'pass')
         elif user_input == "3":
-            pass  # Placeholder for write post method
+            self.mypost()  # Call mypost method
         elif user_input == "4":
-            pass  # Placeholder for message method
+            self.sendmsg()  # Call sendmsg method
         else:
             print("Logging out...")
             exit()  # Exit the program
@@ -42,7 +42,7 @@ class chatbook:
         self.password = password
         self.logged_in = True
         self.menu()  # Show menu again after signup
-        print("Signup method called manually by giving parameter")
+     
         
     def signin(self):
         # Login functionality
@@ -61,5 +61,31 @@ class chatbook:
                 print("Invalid username or password. Try again.\n")
                 self.menu()
 
+    def mypost(self):
+        if self.logged_in == True:
+            print("You can post to other users.")
+            post = input("Enter your post: ")
+            print(f"Post sent: {post}")
+            self.menu()
+
+
+        else:
+            print("Please log in to create a post.") 
+            self.menu()
+    
+        
+    def sendmsg(self):
+        if self.logged_in == True:
+            print("You can send messages to other users.")
+            msg = input("Enter your message: ")
+            print(f"Message sent: {msg}")
+            self.menu()
+
+
+        else:
+            print("Please log in to create a post.") 
+            self.menu()
+            
+            
 # Create an instance of chatbook class
 object1 = chatbook()
