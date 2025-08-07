@@ -5,11 +5,9 @@ class employee:
     # Constructor: runs when an object is created
     def __init__(self):
         # Instance variables (unique to each object)
-        print("Constructor called automatically when an object is created")
         self.id = 123
         self.salary = 50000
         self.designation = "Software Engineer"
-        print("Employee object created with default values")
         
     # Method: action the object can perform
     def travel(self, destination):

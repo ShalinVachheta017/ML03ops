@@ -1,15 +1,29 @@
 # Simple Chatbook class to demonstrate OOP concepts
 
 class chatbook:
+    
+    __user_id = 0  # Class variable to keep track of user IDs
+    
+    
     def __init__(self):
         # Initialize user details and login status
+        self.__name = "Chatbook User"  # Private attribute with double underscore 
+
+        self.id= chatbook.__user_id
+        chatbook.__user_id += 1
         self.username = ""
         self.password = ""
         self.logged_in = False
-        self.menu()  # Show menu when object is created
-        print("Chatbook object created with default values")
-        print("Constructor called automatically when an object is created")
+        #self.menu()  # Show menu when object is created
         print("Welcome to Chatbook!")
+        
+        
+
+    def get_name(self):
+        return self.__name  # Method to access private attribute
+    
+    def set_name(self, name):
+        self.__name = name  # Method to modify private attribute
         
     def menu(self):
         # Display menu options to the user
@@ -57,6 +71,7 @@ class chatbook:
                 print("Sign in successful!")
                 self.logged_in = True
                 self.menu()
+                
             else:
                 print("Invalid username or password. Try again.\n")
                 self.menu()
@@ -81,11 +96,18 @@ class chatbook:
             print(f"Message sent: {msg}")
             self.menu()
 
-
         else:
             print("Please log in to create a post.") 
             self.menu()
             
             
 # Create an instance of chatbook class
-object1 = chatbook()
+user1 = chatbook()
+
+
+# Access and modify object attributes and call methods from  outside the class
+# user1.name = "Chatbook User"
+# print("Object name:", user1.name)
+
+
+   
